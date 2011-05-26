@@ -1407,8 +1407,7 @@ sub _run_app {
     # seems to be hanging around when it doesn't need to be
     $app->{init_request} = 0;    # gotta set this to force the init request
     $app->init_request( CGIObject => $cgi );
-    $app->{request_method} = $params->{__request_method}
-      if ( $params->{__request_method} );
+    $app->{request_method} = $params->{__request_method} || 'GET';
     $app->run;
 
     my $out = $app->{__test_output};
