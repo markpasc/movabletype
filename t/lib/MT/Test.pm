@@ -1369,6 +1369,9 @@ sub _run_app {
         elsif ( $k eq '__test_max_redirects' ) {
             $max_redirects = $v;
         }
+        elsif ( $k eq '__test_path_info' ) {
+            $cgi->path_info($v);
+        }
         elsif ( $k eq '__test_upload' ) {
             my ( $param, $src ) = @$v;
             my $seqno =
